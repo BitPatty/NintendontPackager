@@ -1,4 +1,6 @@
 * text eol=crlf
+*.md text
+*.xml text
 
 *.png binary
 *.dol binary
