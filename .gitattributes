@@ -1,6 +1,7 @@
-* text eol=crlf
+* text eol=lf
 *.md text
 *.xml text
+*.sh text
 
 *.png binary
 *.dol binary
