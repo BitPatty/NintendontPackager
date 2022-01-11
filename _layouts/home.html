@@ -45,7 +45,7 @@
                 {% if t == v %}
                 {%- assign p = page.url | split:'Nintendont' -%}
                 {% if p.size == 1 and page.url != '/' %}
-                <a href="{{ page.url }}">{{ p[0] | replace: '/', '' }}</a>
+                <a href="{{ page.url | relative_url }}">{{ p[0] | replace: '/', '' }}</a>
                 {% endif %}
                 {% endif %}
                 {% endfor %}
