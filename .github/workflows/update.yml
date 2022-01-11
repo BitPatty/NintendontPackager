@@ -1,11 +1,8 @@
 name: Update Packages
 
 on:
-  push:
-    branches:
-      - '*'
-      - '*/*'
-      - '**'
+  schedule:
+    - cron:  '41 * * * *'
 
 jobs:
   build-and-test:
