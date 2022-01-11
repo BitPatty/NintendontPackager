@@ -2,7 +2,7 @@ name: Update Packages
 
 on:
   schedule:
-    - cron:  '41 * * * *'
+    - cron:  '*/5 * * * *'
 
 jobs:
   build-and-test:
