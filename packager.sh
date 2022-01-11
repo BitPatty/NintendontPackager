@@ -50,7 +50,7 @@ function commit_and_push {
   require_param "$@"
   git -C "${WORK_DIR}" add .
   git -C "${WORK_DIR}" commit -m "Update $1"
-  # git -C "${WORK_DIR}" push origin master
+  git -C "${WORK_DIR}" push origin master
 }
 
 # Echo error message and exit script
