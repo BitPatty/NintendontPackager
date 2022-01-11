@@ -227,7 +227,8 @@ require_file "${NINTENDONT_ICON}"
 echo_dbg "Updating repositories.."
 
 #git -C "${WORK_DIR}" reset --hard || echo_err "Failed to reset main repository"
-git -C "${WORK_DIR}" pull -q origin master || echo_err "Failed to pull main repository"
+#git -C "${WORK_DIR}" pull -q origin master || echo_err "Failed to pull main repository"
+git -C "${NINTENDONT_DIR}" config pull.ff only
 git -C "${NINTENDONT_DIR}" reset --hard || echo_err "Failed to reset Nintendont repository"
 git -C "${NINTENDONT_DIR}" pull -q origin master || echo_err "Failed to pull Nintendont repository"
 
