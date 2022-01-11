@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <style>
+        .version-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .version-list a:first-child::before {
+            content: 'Latest Version: ';
+        }
+        .version-list a:first-child {
+            text-align:center;
+            flex: 0 0 100%;
+            color: white;
+            background: #0366d6;
+            padding: 5px 10px;
+            margin-bottom: 16px;
+        }
+        .version-list a {
+            margin-bottom: 16px;
+            margin-right: 16px;
+            display: inline-block;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+        {{ content }}
+        <div>
+            <h2>Available Versions</h2>
+            <div class="version-list">
+                {% assign version_numbers = site.pages | map:"url" | join:"," | replace:".","" | replace:"/","" | split:"," | sort %}
+                {% capture versions %}{% for v in version_numbers %}{% assign vnum = v | plus: 0 %}{% if vnum > 0 %}{{ vnum | prepend:'0000000000' | slice:-10,10 }},{% endif %}{% endfor %}{% endcapture %}
+                {% assign sorted_versions = versions | split:',' | sort | reverse %}
+                {% for v in sorted_versions %}
+                {% for page in site.pages %}
+                {% assign t = page.url | replace:".","" | replace:"/","" | prepend:'0000000000' | slice:-10,10 %}
+                {% if t == v %}
+                {%- assign p = page.url | split:'Nintendont' -%}
+                {% if p.size == 1 and page.url != '/' %}
+                <a href="{{ page.url }}">{{ p[0] | replace: '/', '' }}</a>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
