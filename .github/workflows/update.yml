@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@v1
         with:
           submodules: true
+          ref: master
       - name: Setup GitHub config
         run: |
           git config --local user.name "BotPatty"
