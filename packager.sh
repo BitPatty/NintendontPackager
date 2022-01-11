@@ -14,8 +14,10 @@ declare -r NINTENDONT_HEADER="${NINTENDONT_DIR}/common/include/NintendontVersion
 declare -r NINTENDONT_DOL="${NINTENDONT_DIR}/loader/loader.dol"
 declare -r NINTENDONT_ICON="${NINTENDONT_DIR}/nintendont/icon.png"
 declare -r NINTENDONT_XML="${NINTENDONT_DIR}/nintendont/meta.xml"
+declare -r NINTENDONT_BASE_BRANCH="master"
 
 declare -r SYM_LOC="${WORK_DIR}/latest"
+declare -r TARGET_BRANCH="master"
 
 # Nintendont Variables
 declare MAJ_VERSION=""
@@ -50,7 +52,7 @@ function commit_and_push {
   require_param "$@"
   git -C "${WORK_DIR}" add .
   git -C "${WORK_DIR}" commit -m "Update $1"
-  git -C "${WORK_DIR}" push origin master
+  git -C "${WORK_DIR}" push origin $TARGET_BRANCH
 }
 
 # Echo error message and exit script
@@ -225,12 +227,8 @@ require_file "${NINTENDONT_ICON}"
 
 # Update main and nintendont repository
 echo_dbg "Updating repositories.."
-
-#git -C "${WORK_DIR}" reset --hard || echo_err "Failed to reset main repository"
-#git -C "${WORK_DIR}" pull -q origin master || echo_err "Failed to pull main repository"
-# git -C "${NINTENDONT_DIR}" config pull.ff only
 git -C "${NINTENDONT_DIR}" reset --hard || echo_err "Failed to reset Nintendont repository"
-git -C "${NINTENDONT_DIR}" pull -q origin master --rebase || echo_err "Failed to pull Nintendont repository"
+git -C "${NINTENDONT_DIR}" pull -q origin $NINTENDONT_BASE_BRANCH --rebase || echo_err "Failed to pull Nintendont repository"
 
 # Create temporary directory and trap the deletion on exit
 echo_dbg "Creating temporary directory.."
@@ -310,5 +308,3 @@ while [ $REV_CNT -gt 1 ]; do
 
   write_readme_commit_formatted "${README_DIR}"
 done
-
-
