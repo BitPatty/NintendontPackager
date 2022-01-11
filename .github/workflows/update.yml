@@ -17,6 +17,10 @@ jobs:
         uses: actions/checkout@v1
         with:
           submodules: true
+      - name: Setup GitHub config
+        run: |
+          git config --local user.name "BotPatty"
+          git config --local user.email "ci@zint.ch"
       - name: Install SSH Key
         run: |
           install -m 600 -D /dev/null ~/.ssh/id_rsa
