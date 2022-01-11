@@ -265,7 +265,6 @@ while [ $REV_CNT -gt 1 ]; do
 
       if [ -f "${TARGET_DIR}/boot.dol" ] && [ "$(calc_sha1 """${TARGET_DIR}/boot.dol""")" = "${SHA_CURR}" ]; then
         echo_dbg "Existing package found with unchanged hash. Exiting.."
-        create_symlink
         exit 0
       else
         echo_dbg "Missing boot.dol or SHA1 mismatch in existing directory. Regenerating files.."
@@ -295,6 +294,7 @@ while [ $REV_CNT -gt 1 ]; do
     # Debug
     echo_dbg "Created release at ${TARGET_DIR}"
 
+    create_symlink
     commit_and_push "${VER_PREV}"
 
     # Clear up temp directory and copy new files
@@ -311,5 +311,4 @@ while [ $REV_CNT -gt 1 ]; do
   write_readme_commit_formatted "${README_DIR}"
 done
 
-create_symlink
 
