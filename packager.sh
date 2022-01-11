@@ -57,7 +57,7 @@ function commit_and_push {
 function echo_err {
   if [ $# -lt 1 ] || [ ! -n "$1" ]; then echo_err "Unknown error"; fi
   echo -e "\033[0;31mERROR\033[0m: $1 -- exiting" >&2
-  exit
+  exit 1
 }
 
 # Echo debug message
@@ -228,9 +228,9 @@ echo_dbg "Updating repositories.."
 
 #git -C "${WORK_DIR}" reset --hard || echo_err "Failed to reset main repository"
 #git -C "${WORK_DIR}" pull -q origin master || echo_err "Failed to pull main repository"
-git -C "${NINTENDONT_DIR}" config pull.ff only
+# git -C "${NINTENDONT_DIR}" config pull.ff only
 git -C "${NINTENDONT_DIR}" reset --hard || echo_err "Failed to reset Nintendont repository"
-git -C "${NINTENDONT_DIR}" pull -q origin master || echo_err "Failed to pull Nintendont repository"
+git -C "${NINTENDONT_DIR}" pull -q origin master --rebase || echo_err "Failed to pull Nintendont repository"
 
 # Create temporary directory and trap the deletion on exit
 echo_dbg "Creating temporary directory.."
