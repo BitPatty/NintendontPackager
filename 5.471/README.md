@@ -1,4 +1,6 @@
 # Nintendont 5.471
+[Direct Download](./Nintendont.zip)
+
 Commit: 450d082152911fe6ff4b5f94f8ab21e7f2f14748  
 Time: Wed Oct 11 23:19:31 2017   
 

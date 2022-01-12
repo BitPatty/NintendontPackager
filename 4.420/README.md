@@ -1,4 +1,6 @@
 # Nintendont 4.420
+[Direct Download](./Nintendont.zip)
+
 Commit: 5a068b248b3e3f65e3205c4eae8f2266631f158d  
 Time: Thu Jul 21 20:06:08 2016   
 

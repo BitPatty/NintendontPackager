@@ -1,4 +1,6 @@
 # Nintendont 6.490
+[Direct Download](./Nintendont.zip)
+
 Commit: d1b29b0d08899ca8e2cd4cd7899d9dd2fda281df  
 Time: Sat Nov 14 16:17:22 2020   
 

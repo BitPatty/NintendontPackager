@@ -1,4 +1,6 @@
 # Nintendont 2.286
+[Direct Download](./Nintendont.zip)
+
 Commit: 8f5326e2a0be34972aba7faff56cbe65108806e1  
 Time: Tue Feb 3 23:07:26 2015   
 

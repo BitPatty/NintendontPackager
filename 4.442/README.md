@@ -1,4 +1,6 @@
 # Nintendont 4.442
+[Direct Download](./Nintendont.zip)
+
 Commit: 13e76cc77f1708fa50dbb1214a9cd7039c7d46d4  
 Time: Sun May 14 18:10:07 2017   
 

@@ -1,4 +1,6 @@
 # Nintendont 1.88
+[Direct Download](./Nintendont.zip)
+
 Commit: 7f0bc650ad97c4d536a148b28c3f9a468695a247  
 Time: Tue Jun 17 03:58:17 2014   
 

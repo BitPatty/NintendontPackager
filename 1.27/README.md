@@ -1,4 +1,6 @@
 # Nintendont 1.27
+[Direct Download](./Nintendont.zip)
+
 Commit: 6f1e448aca99fe566f4069c4cfab9290e9083adc  
 Time: Wed May 7 01:57:00 2014   
 

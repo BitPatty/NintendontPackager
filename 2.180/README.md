@@ -1,4 +1,6 @@
 # Nintendont 2.180
+[Direct Download](./Nintendont.zip)
+
 Commit: dab54dac1e01efaece9ead729aa3a450c3d5165b  
 Time: Sat Oct 18 18:54:27 2014   
 
