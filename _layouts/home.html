@@ -36,20 +36,7 @@
         <div>
             <h2>Available Versions</h2>
             <div class="version-list">
-                {% assign version_numbers = site.pages | map:"url" | join:"," | replace:".","" | replace:"/","" | split:"," | sort %}
-                {% capture versions %}{% for v in version_numbers %}{% assign vnum = v | plus: 0 %}{% if vnum > 0 %}{{ vnum | prepend:'0000000000' | slice:-10,10 }},{% endif %}{% endfor %}{% endcapture %}
-                {% assign sorted_versions = versions | split:',' | sort | reverse %}
-                {% for v in sorted_versions %}
-                {% for page in site.pages %}
-                {% assign t = page.url | replace:".","" | replace:"/","" | prepend:'0000000000' | slice:-10,10 %}
-                {% if t == v %}
-                {%- assign p = page.url | split:'Nintendont' -%}
-                {% if p.size == 1 and page.url != '/' %}
-                <a href="{{ page.url | relative_url }}">{{ p[0] | replace: '/', '' }}</a>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                {% endfor %}
+                {% assign version_numbers = site.pages | map:"url" | join:"," | replace:".","" | replace:"/","" | split:"," | sort %}{% capture versions %}{% for v in version_numbers %}{% assign vnum = v | plus: 0 %}{% if vnum > 0 %}{{ vnum | prepend:'0000000000' | slice:-10,10 }},{% endif %}{% endfor %}{% endcapture %}{% assign sorted_versions = versions | split:',' | sort | reverse %}{% for v in sorted_versions %}{% for page in site.pages %}{% assign t = page.url | replace:".","" | replace:"/","" | prepend:'0000000000' | slice:-10,10 %}{% if t == v %}{%- assign p = page.url | split:'Nintendont' -%}{% if p.size == 1 and page.url != '/' %}<a href="{{ page.url | relative_url }}">{{ p[0] | replace: '/', '' }}</a>{% endif %}{% endif %}{% endfor %}{% endfor %}
             </div>
         </div>
     </div>
