@@ -1,10 +1,20 @@
 # Nintendont 6.502
 [Direct Download](./Nintendont.zip)
 
-Commit: a9167924e2994802d6e202ac41beb8ca8ca8d1d3  
-Time: Sat Apr 19 23:09:51 2025   
+Commit: deba3b5c3482043240529ac4cecd5ece934d5764  
+Time: Tue Apr 29 21:33:08 2025   
 
 -----
+
+```
+commit deba3b5c3482043240529ac4cecd5ece934d5764
+Author: pedro702 <pedroaxel15@hotmail.com>
+Date:   Tue Apr 29 21:33:08 2025 +0100
+
+    Update loader.dol
+    
+    shouldnt freeze on exit anymore
+```
 
 ```
 commit a9167924e2994802d6e202ac41beb8ca8ca8d1d3
