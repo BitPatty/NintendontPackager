@@ -1,10 +1,18 @@
 # Nintendont 6.503
 [Direct Download](./Nintendont.zip)
 
-Commit: bb96878ff19241d8bc2467be47920efc4ba95df5  
-Time: Tue Apr 29 21:52:22 2025   
+Commit: 8f4324d95048e24bcf7e80b863f823a56c54647e  
+Time: Wed Apr 30 21:38:29 2025   
 
 -----
+
+```
+commit 8f4324d95048e24bcf7e80b863f823a56c54647e
+Author: pedro702 <pedroaxel15@hotmail.com>
+Date:   Wed Apr 30 21:38:29 2025 +0100
+
+    just fixing menu
+```
 
 ```
 commit bb96878ff19241d8bc2467be47920efc4ba95df5
